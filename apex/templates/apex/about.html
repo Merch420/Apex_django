@@ -1,0 +1,18 @@
+{% extends 'apex/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+{% for contact in page_obj %}
+    <p>{{ contact }}</p>
+    {% endfor %}
+
+<nav class="list-pages">
+    <ul>
+        {% for p in page_obj.paginator.page_range %}
+            <li class="page-num">
+            <a href="?page={{ p }}">{{ p }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
